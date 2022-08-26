@@ -18,10 +18,8 @@ int[,] CreateMatrixRndInt(int row, int col, int min, int max) // созд 2ме�
     return matrix;
 }
 
-void ChangeMatrixEvenIndex(int [,] matrix) // созд 2мерного массива
+int[,] SqrtMatrixEvenIndex(int [,] matrix) // созд 2мерного массива
 {
-    int[,] matrix = new int[row, col];
-
     for (int i = 0; i < matrix.GetLength(0); i+=2)
     {
         for (int j = 0; j < matrix.GetLength(1); j+=2)
@@ -29,6 +27,7 @@ void ChangeMatrixEvenIndex(int [,] matrix) // созд 2мерного масс�
             matrix[i, j] = matrix[i, j] * matrix[i, j]; 
         }
     }
+    return matrix;
 }
 
 
@@ -47,10 +46,10 @@ void PrintMatrix(int[,] matrix)
     }
 }
 
-int[,] array2D = CreateMatrixRndInt(3, 4, -3, 3);
+int[,] array2D = CreateMatrixRndInt(5, 4, -3, 5);
 PrintMatrix(array2D);
 
 Console.WriteLine();
 
-ChangeMatrixEvenIndex(array2D);
+SqrtMatrixEvenIndex(array2D);
 PrintMatrix(array2D);
